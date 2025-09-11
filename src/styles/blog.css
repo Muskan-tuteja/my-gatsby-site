@@ -1,0 +1,27 @@
+.blog-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+h1{
+  text-align: center;
+  color: #663399;
+}
+
+.blog-post {
+  background: #f9f9f9;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post h2 {
+  color: #663399;
+  margin-bottom: 0.5rem;
+}
+
+.blog-post p {
+  color: #555;
+  font-size: 0.9rem;
+}
