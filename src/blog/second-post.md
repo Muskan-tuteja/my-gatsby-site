@@ -1,6 +1,10 @@
 ---
 title: "My Second Blog"
+author: "Muskan"
 date: "2025-09-12"
-author: "muskan"
+tags: ["practice", "frontend"]
 ---
-This is my second blog post written in Markdown inside Gatsby!
+In this blog, I practiced creating multiple Markdown posts.  
+It helps me understand how Gatsby shows a list of blogs.
+
+

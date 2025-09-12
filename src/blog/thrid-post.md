@@ -1,6 +1,8 @@
 ---
 title: "Learning Gatsby"
-date: "2025-09-15"
-author: "muskan"
+author: "Muskan"
+date: "2025-09-14"
+tags: ["gatsby", "graphql", "learning"]
 ---
-Today I learned how to use Markdown, GraphQL, and Gatsby together!
+Today I explored GraphQL inside Gatsby!  
+It is powerful because I can fetch only the data I want.

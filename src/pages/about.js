@@ -2,7 +2,7 @@ import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import "../styles/about.css" 
-import { Link } from "gatsby";  
+// import { Link } from "gatsby";  
 
 const AboutPage = () => {
   return (

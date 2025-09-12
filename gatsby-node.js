@@ -1,18 +1,40 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/
- */
+const path = require("path")
 
-/**
- * @type {import('gatsby').GatsbyNode['createPages']}
- */
-exports.createPages = async ({ actions }) => {
+// Har Markdown file ke लिए slug banata hai
+exports.onCreateNode = ({ node, actions }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === "MarkdownRemark") {
+    const slug = `/blog/${path.basename(node.fileAbsolutePath, ".md")}/`
+    createNodeField({
+      node,
+      name: "slug",
+      value: slug,
+    })
+  }
+}
+
+// Har slug ke लिए ek page create karta hai
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  createPage({
-    path: "/using-dsg",
-    component: require.resolve("./src/templates/using-dsg.js"),
-    context: {},
-    defer: true,
+  const result = await graphql(`
+    {
+      allMarkdownRemark {
+        nodes {
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  `)
+
+  result.data.allMarkdownRemark.nodes.forEach(node => {
+    createPage({
+      path: node.fields.slug,
+      component: path.resolve("./src/templates/blog-post.js"),
+      context: {
+        slug: node.fields.slug,
+      },
+    })
   })
 }
