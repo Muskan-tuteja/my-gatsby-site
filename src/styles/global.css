@@ -30,6 +30,7 @@ nav a{
   display: inline-block;
   margin-left: 20px;
   font-weight: 1000;
+  font-size: 20px;
   margin-top: 10px;
   border-bottom: 3px solid transparent;
 }
@@ -49,6 +50,7 @@ footer p{
   color: black;
   margin: 40px auto;
   bottom: 40%;
+  font-size: 30px;
   
 }
 .intro {

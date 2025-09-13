@@ -1,32 +1,34 @@
-import * as React from "react"
-import { StaticImage } from "gatsby-plugin-image"
-import Layout from "../components/layout"
-import "../styles/about.css" 
-// import { Link } from "gatsby";  
+import React from "react"
+import Img from "gatsby-image"
+import "../styles/about.css"
 
-const AboutPage = () => {
+import Layout from "../components/layout"
+import { graphql } from "gatsby"
+
+// import { Link } from "gatsby";
+
+const AboutPage = ({ data }) => {
   return (
     <Layout>
       <div className="about-container">
         <h1>About Me</h1>
         <p>
-          Hi, I am <b>Muskan Tuteja</b>.  
-          Currently working as a <b>Frontend Developer Intern</b> at Hexadecimal Software Pvt. Ltd.
+          Hi, I am <b>Muskan </b>. Currently working as a{" "}
+          <b>Frontend Developer Intern</b> at Hexadecimal Software Pvt. Ltd.
         </p>
         <p>
           <b>Education:</b> B.Tech in Computer Engineering <br />
-           <b>Skills:</b> HTML, CSS, JavaScript, React, Gatsby <br />
-           <b>Goal:</b> To become a professional Frontend Developer <br />
+          <b>Skills:</b> HTML, CSS, JavaScript, React, Gatsby <br />
+          <b>Goal:</b> To become a professional Frontend Developer <br />
         </p>
-
-        {/* Profile Image */}
-        <StaticImage
-          src="../images/my-photo.png"
-          alt="Muskan Profile"
+        <Img
+          fluid={data.file.childImageSharp.fluid}
           placeholder="blurred"
-          layout="fixed"
-          width={200}
-          height={200}
+          style={{
+            width: "200px",
+            height: "200px",
+            margin: "20px auto",
+          }}
         />
       </div>
     </Layout>
@@ -34,3 +36,15 @@ const AboutPage = () => {
 }
 
 export default AboutPage
+
+export const query = graphql`
+  query ima {
+    file(relativePath: { eq: "my-photo.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`

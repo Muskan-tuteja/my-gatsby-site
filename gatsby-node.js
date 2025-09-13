@@ -1,17 +1,19 @@
 const path = require("path")
+const { createFilePath } = require("gatsby-source-filesystem")
 
-// Har Markdown file ke लिए slug banata hai
-exports.onCreateNode = ({ node, actions }) => {
+exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
+
   if (node.internal.type === "MarkdownRemark") {
-    const slug = `/blog/${path.basename(node.fileAbsolutePath, ".md")}/`
+    const slug = createFilePath({ node, getNode, basePath: "blog" })
     createNodeField({
       node,
       name: "slug",
-      value: slug,
+      value: `/blog${slug}`,
     })
   }
 }
+
 
 // Har slug ke लिए ek page create karta hai
 exports.createPages = async ({ graphql, actions }) => {

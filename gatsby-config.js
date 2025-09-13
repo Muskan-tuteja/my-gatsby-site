@@ -16,12 +16,22 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
-  `gatsby-plugin-image`,
+  `gatsby-transformer-remark`,
+  `gatsby-transformer-sharp`,
+  `gatsby-plugin-sharp`,
   {
     resolve: `gatsby-source-filesystem`,
     options: {
       name: `blog`,
       path: `${__dirname}/src/blog`,
+    },
+  },
+  // {
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `images`,
+      path: `${__dirname}/src/images`,
     },
   },
   {
@@ -37,8 +47,8 @@ module.exports = {
       ],
     },
   },
-  `gatsby-transformer-sharp`,
-  `gatsby-plugin-sharp`,
+  // `gatsby-transformer-sharp`,
+  // `gatsby-plugin-sharp`,
   {
     resolve: `gatsby-plugin-manifest`,
     options: {
