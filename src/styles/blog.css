@@ -1,10 +1,10 @@
-/* src/styles/blog.css */
+
 
 .blog-page {
   max-width: 900px;
   margin: 0 auto;
   padding: 2rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .blog-page h1 {
@@ -42,6 +42,7 @@
   margin-bottom: 1rem;
 }
 
+
 .blog-content img {
   max-width: 100%;
   height: auto;
@@ -56,26 +57,45 @@
 
 .blog-post a {
   display: inline-block;
-  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #663399;
+  color: white;
   text-decoration: none;
-  color: #663399;
-  font-weight: bold;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+.blog-post a:hover {
+  background: #8f72ac;
 }
 
-.blog-post a:hover {
-  text-decoration: underline;
-}
-/* Markdown images */
 .blog-content img {
-  max-width: 100%;      /* Responsive */
+  max-width: 100%;
   height: auto;
   display: block;
-  margin: 1rem auto;    /* Center images with top/bottom margin */
-  border-radius: 8px;   /* Rounded corners */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* subtle shadow */
+  margin: 1rem auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+}
+.blog-content {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1rem;
 }
 
 .blog-content img:hover {
-  transform: scale(1.03); /* Slight zoom on hover */
+  transform: scale(1.03);
+}
+.tag-list {
+  margin-top: 0.8rem;
+}
+.tag {
+  display: inline-block;
+  background: #eee;
+  color: #555;
+  padding: 3px 10px;
+  margin: 3px;
+  border-radius: 12px;
+  font-size: 0.8rem;
 }

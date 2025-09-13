@@ -1,8 +1,8 @@
 ---
-title: "Adding Images in Blogs"
-author: "Isha"
+title: "Five in Blogs"
+author: "Ishaa"
 date: "2025-09-13"
-tags: ["gatsby", "images", "optimization"]
+tags: ["gatsby", "image", "optimization"]
 ---
 In this post, I tried adding images inside my Markdown blogs.  
 Using Gatsby, images can be optimized for better performance.

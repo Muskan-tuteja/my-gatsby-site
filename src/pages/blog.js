@@ -43,7 +43,7 @@ export const query = graphql`
           date
           author
         }
-        html
+        excerpt(pruneLength: 150)
         fields {
           slug
         }

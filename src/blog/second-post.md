@@ -1,6 +1,6 @@
 ---
 title: "My Second Blog"
-author: "Muskan"
+author: "Musu"
 date: "2025-09-12"
 tags: ["practice", "frontend"]
 ---
